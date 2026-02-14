@@ -16,4 +16,4 @@ app.register_blueprint(blueprint= movie_page ,url_prefix=  "/MovieRecommender")
 
 
 if __name__ == "__main__" :
-    app.run(debug=True)
+    app.run(host='0.0.0.0',debug=True)
