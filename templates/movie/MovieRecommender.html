@@ -1,0 +1,67 @@
+{% extends "base/base.html" %}
+{% block title %} Recommendation {% endblock %}
+
+{% block body %}
+
+<main>
+  <section class = " container-fluid bg-dark">
+  <div class="row">
+    <div class="col-9">
+      <form action={{ url_for('MovieRecommender.movie_recommender_page') }} method="POST">
+        <div class ="text-start text-light">
+          <h1> Movie Recommender </h1>
+        </div>
+        <input type="text" class="form-control" list="suggestions" name="user_input" placeholder="Movie Title">
+        <!-- Dropdown suggestions -->
+        <div class="col-4">
+          <datalist id="suggestions">
+            {% for title in titles %}
+            <option value="{{ title }}">
+            {% endfor %}
+          </datalist>
+        </div>
+        <div class="col-9 my-3">
+          <input type="submit" class="btn btn-warning mb-3" value="submit">
+        </div>
+        <!-- Display the user input using Jinja -->
+        {% if user_input %}
+          <div class="col-9 my-5" text-align="left">
+            <h2 class="text-light">You have selected: {{ user_input }}</h2>
+          </div>
+        {% endif %}
+      </form>
+    </div>
+
+    <div class="col-sm-3">
+      <div class="col-md-6 text-center">
+        <img src={{ url_for('static', filename='images/pic.jpg') }} alt="Profile Image" class="profile-img">
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+    <section class ="container-fluid">
+ <div class="row ">
+{% if success==1  %}  
+  {% for items in data %}
+    <div class="col-3 my-2">
+      <div class="card h-100">
+          <img src= "https://image.tmdb.org/t/p/original{{items['poster_path']}}" class="card-img-top" style="height: 420px;">
+        <div class="card-body">
+          <h5 class="card-title">{{items['movie_title']}}</h5>
+        </div>
+      </div>
+    </div>
+  {% endfor %}
+
+{% elif success==0 %}
+    <div class="container">
+      <h1 class = "text-center"> Not Found </h1>
+    </div>
+{% endif %}
+</div>
+</section>
+    </main>
+{% endblock %}

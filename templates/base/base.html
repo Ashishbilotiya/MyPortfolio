@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <title>Developer Portfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href={{ url_for('static', filename='style.css') }}>
+  </head>
+
+  <body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
+    
+    <header>
+      <!-- Navbar -->
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="/">MyPortfolio</a>
+            <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#nav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="nav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="/#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/#skills">Skills</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/#projects">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+      </nav>
+    </header>
+
+    {% block body %} {% endblock %}
+
+    <!-- Footer -->
+    <footer class="bg-dark text-light pt-4 pb-3">
+  <div class="container">
+    <div class="row text-center text-md-start">
+
+      <!-- About -->
+      <div class="col-md-4 mb-3">
+        <h5 class="fw-bold">Ashish</h5>
+        <p class="small">
+          B.Tech (CSAI) Student | AI & Web Developer<br>
+          Passionate about building intelligent, scalable systems.
+        </p>
+      </div>
+
+      <!-- Contact Info -->
+      <div class="col-md-4 mb-3">
+        <h5 class="fw-bold">Contact</h5>
+        <p class="small mb-1">
+          📧 Email: <a href="mailto:yourgmail@gmail.com" class="text-light text-decoration-none">
+            ashishbilotia2003@gmail.com
+          </a>
+        </p>
+        <p class="small mb-1">
+          📍 Location: Jaipur,India
+        </p>
+        <p class="small mb-1">
+          📞 Phone No: +91 7014723451
+        </p>
+        <p class="small">
+          💼 LinkedIn:
+          <a href="https://linkedin.com/in/yourprofile" target="_blank"
+             class="text-light text-decoration-none">
+            linkedin.com/in/yourprofile
+          </a>
+        </p>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="col-md-4 mb-3">
+        <h5 class="fw-bold">Quick Links</h5>
+        <ul class="list-unstyled small">
+          <li><a href="#home" class="text-light text-decoration-none">Home</a></li>
+          <li><a href="#about" class="text-light text-decoration-none">About</a></li>
+          <li><a href="#skills" class="text-light text-decoration-none">Skills</a></li>
+          <li><a href="#projects" class="text-light text-decoration-none">Projects</a></li>
+          <li><a href="#contact" class="text-light text-decoration-none">Contact</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <hr class="border-secondary">
+
+    <div class="text-center small">
+      © 2026 Ashish | All Rights Reserved
+    </div>
+  </div>
+</footer>
+
+
+
+  </body>
+</html>

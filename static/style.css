@@ -1,0 +1,54 @@
+body {
+    scroll-behavior: smooth;
+    margin-top: 70px;
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(to right, #0d6efd, #6610f2);
+    color: white;
+    padding: 80px 0;
+}
+
+.hero h1 span {
+    font-weight: bold;
+}
+
+.profile-img {
+    width: 260px;
+    border-radius: 50%;
+    border: 5px solid white;
+}
+
+/* Section */
+.section {
+    padding: 60px 0;
+}
+
+.section-title {
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+/* Skills */
+.skill-box {
+    padding: 20px;
+    background: white;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    font-weight: 500;
+}
+
+/* Cards */
+.card img {
+    height: 200px;
+    object-fit: cover;
+}
+
+/* Footer */
+footer {
+    background: #111;
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+}

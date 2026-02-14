@@ -1,0 +1,34 @@
+{% extends "base/base.html" %}
+
+
+    {% block title %} TopBooks {% endblock %}
+
+{% block content %} TopBooks {% endblock%}
+
+
+{% block body %}
+
+<main>
+<section class ="container-fluid">
+ <div class="row ">
+{% for i in range(book_title|length) %}
+  <div class="col-2 my-2">
+    <div class="card h-100">
+      <img src={{image[i]}} class="card-img-top">
+      <div class="card-body">
+        <h5 class="card-title">{{book_title[i]}}</h5>
+        <p class="card-text" >Author : {{author[i]}}</p>
+        <p class="card-text" >Votes : {{votes[i]}}</p>
+        <p class="card-text" >Avg-Rating : {{rating[i]}}</p>
+      </div>
+    </div>
+  </div>
+ {% endfor %}
+</div>
+</section>
+</main>
+{% endblock %}
+
+
+
+

@@ -1,0 +1,67 @@
+{% extends "base/base.html" %}
+{% block title %} Recommendation {% endblock %}
+
+{% block body %}
+
+<main>
+
+<section class = " container-fluid bg-dark">
+  <div class="row">
+    <div class="col-9">
+      <form action={{ url_for('BookRecommender.book_recommender_page') }} method="POST">
+        <div class ="text-start text-light">
+          <h1> Book Recommender  </h1>
+        </div>
+        <input type="text" class="form-control" list="suggestions" name="user_input" placeholder="Book Title">
+        <!-- Dropdown suggestions -->
+        <div class="col-4">
+          <datalist id="suggestions">
+            {% for title in book_titles %}
+            <option value="{{ title }}">
+            {% endfor %}
+          </datalist>
+        </div>
+        <div class="col-9 my-3">
+          <input type="submit" class="btn btn-warning mb-3" value="submit">
+        </div>
+        <!-- Display the user input using Jinja -->
+        {% if user_input %}
+          <div class="col-9 my-5" text-align="left">
+            <h2 class="text-light">You have selected: {{ user_input }}</h2>
+          </div>
+        {% endif %}
+      </form>
+    </div>
+    <div class="col-sm-3">
+        <div class="col-md-6 text-center">
+                <img src={{ url_for('static', filename='images/pic.jpg') }} alt="Profile Image" class="profile-img">
+            </div>
+
+    </div>
+  </div>
+</section>
+
+
+    <section class ="container-fluid">
+{% if success==1 %}
+ <div class="row ">
+  {% for i in data %}
+    <div class="col-3 my-2">
+      <div class="card h-100"> 
+        <img src={{"https" + i[2][4:]}} class="card-img-top" style="height: 420px;">
+        <div class="card-body">
+          <h5 class="card-title">{{i[0]}}</h5>
+          <p class="card-text" >Author : {{i[1]}}</p>
+        </div>
+      </div>
+    </div>
+  {% endfor %}
+  </div>
+{% elif success==0 %}
+   <div class="container">
+      <h1 class = "text-center"> Not Found </h1>
+    </div>
+{% endif %} 
+</section>
+    </main>
+{% endblock %}
